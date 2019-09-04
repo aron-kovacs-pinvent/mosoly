@@ -1,0 +1,41 @@
+<div *ngIf="user">
+  <div class="text-center">
+    <h5>Welcome, {{user.name}}</h5>
+  </div>
+  <div class="h-100">
+    <ul class="list-group list-group-flush">
+
+      <li class="list-group-item d-flex justify-content-between py-1 px-0" *ngIf="user.validated">
+        <button class="full-width" mat-button [routerLink]="['/verification-qr']">Verify new member&nbsp;<mat-icon>check_circle_outline</mat-icon>
+        </button>
+      </li>
+
+      <li class="list-group-item d-flex justify-content-between py-1 px-0" *ngIf="user.validated">
+        <button class="full-width" mat-button>Monitor mentorees&nbsp;<mat-icon>list</mat-icon>
+        </button>
+      </li>
+      <li class="list-group-item d-flex justify-content-between py-1 px-0" *ngIf="user.validated">
+        <button class="full-width" mat-button disabled>My Projects&nbsp;<mat-icon>folder_open</mat-icon>
+        </button>
+      </li>
+      <li class="list-group-item d-flex justify-content-between py-1 px-0" *ngIf="user.validated">
+        <button class="full-width" mat-button disabled>Supported Projects&nbsp;<mat-icon>folder_open</mat-icon>
+        </button>
+      </li>
+      <li class="list-group-item d-flex justify-content-between py-1 px-0" *ngIf="user.validated">
+        <button class="full-width" mat-button disabled>Active Projects&nbsp;<mat-icon>folder_open</mat-icon>
+        </button>
+      </li>
+      <li class="list-group-item d-flex justify-content-between py-1 px-0 border-bottom" *ngIf="user.validated">
+        <button class="full-width" mat-button disabled>My Funds&nbsp;<mat-icon>attach_money</mat-icon>
+        </button>
+      </li>
+    </ul>
+  </div>
+  <div class="text-center" *ngIf="!user.validated">
+    Validations: {{user.validations}} / 2
+  </div>
+  <div class="text-center" *ngIf="!user.validated" style="color: red">
+    You don't have enough validations. Please get your mentors to validate you.
+  </div>
+</div>

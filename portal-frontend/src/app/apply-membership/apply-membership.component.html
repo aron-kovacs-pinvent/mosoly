@@ -1,0 +1,85 @@
+<form #f="ngForm" (ngSubmit)="register()" autocomplete="off">
+  <mat-form-field class="full-width">
+
+    <input
+      matInput
+      type="text"
+      placeholder="Name"
+      autocomplete="off"
+      [(ngModel)]="model.name"
+      required
+      name="name"
+    >
+
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label>Photo ID Type</mat-label>
+    <mat-select required [(ngModel)]="model.photoIdType" name="photoid">
+      <mat-option value="ID_CARD">ID Card</mat-option>
+      <mat-option value="PASSPORT">Passport</mat-option>
+      <mat-option value="DRIVING_LICENSE">Driving license</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field class="full-width">
+
+    <input
+      matInput
+      type="text"
+      placeholder="Photo ID Number"
+      autocomplete="off"
+      [(ngModel)]="model.photoIdNumber"
+      required
+      name="photoidnumber"
+    >
+
+  </mat-form-field>
+  <mat-form-field class="full-width">
+
+    <input
+      matInput
+      type="text"
+      placeholder="Blockchain ID"
+      autocomplete="off"
+      [(ngModel)]="model.account"
+      name="account"
+      required
+    >
+
+  </mat-form-field>
+  <mat-form-field class="full-width">
+
+    <input
+      matInput
+      type="text"
+      placeholder="Anonymous email"
+      autocomplete="off"
+      [(ngModel)]="model.email"
+      name="email"
+    >
+
+  </mat-form-field>
+  <mat-form-field class="full-width">
+
+    <input
+      matInput
+      type="text"
+      placeholder="Password"
+      autocomplete="off"
+      [(ngModel)]="model.password"
+      required
+      name="password"
+    >
+
+  </mat-form-field>
+
+  <p *ngIf="mentorName" class="d-flex justify-content-center my-4">Your Mentor: {{mentorName}}</p>
+
+  <div class="text-center">
+    <button type="submit" mat-raised-button color="accent" [disabled]="!f.valid">Apply for membership</button>
+  </div>
+
+</form>
+
+
+

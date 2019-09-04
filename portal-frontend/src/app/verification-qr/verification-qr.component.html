@@ -1,0 +1,10 @@
+<h5 class="text-center">Verify new member</h5>
+<div class="text-center">
+  <qr-code [value]="qrData" [size]="150"></qr-code>
+</div>
+<div class="text-center">
+  <p *ngIf="!needsValidation" style="color: red; font-weight: lighter">Your new invitee should scan this QR code. Once done, please press the button below, and proceed accordingly.</p>
+</div>
+<div class="text-center">
+  <button mat-raised-button color="primary" (click)="refresh()" *ngIf="!needsValidation">Refresh</button>
+</div>

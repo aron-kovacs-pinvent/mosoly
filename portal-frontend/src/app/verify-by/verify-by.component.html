@@ -1,0 +1,10 @@
+<div *ngIf="mentorName">
+<p>You have been added to {{mentorName}}'s mentorees successfully.</p>
+<p>Please get back to him/her and ask to refresh and finish your validation process.</p>
+</div>
+<div *ngIf="!success">
+  Something went wrong, please try again later.
+</div>
+<div class="text-center">
+  <button mat-raised-button color="primary" (click)="proceed()">Back to the main menu</button>
+</div>

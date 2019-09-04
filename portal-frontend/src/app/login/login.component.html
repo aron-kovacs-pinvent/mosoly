@@ -1,0 +1,50 @@
+<div class="container" style="height: 100%">
+  <div class="container rounded p-s5 my-5 h-100" style="max-width: 400px; height: 100%" *ngIf="!showPasswd">
+    <form>
+      <div class="form-group my-1 p-2">
+        <mat-form-field class="full-width">
+
+          <input
+            matInput
+            type="text"
+            placeholder="Blockchain ID or Anonymous email"
+            autocomplete="off"
+            [(ngModel)]="loginInput"
+            [ngModelOptions]="{standalone: true}"
+            autocapitalize="none"
+          >
+
+        </mat-form-field>
+      </div>
+
+      <button mat-raised-button color="primary" style="width:100%" (click)="loginGiven()">Next</button>
+
+    </form>
+  </div>
+
+  <div class="container rounded p-s5 my-5 h-100" style="max-width: 400px;" *ngIf="showPasswd">
+    <form>
+      <div class="form-group my-1">
+        <mat-form-field class="full-width">
+          <input matInput type="password" placeholder="Password" required [(ngModel)]="password" autocomplete="off"
+                 [ngModelOptions]="{standalone: true}">
+        </mat-form-field>
+      </div>
+      <button mat-raised-button class="mx-auto mb-3" color="primary" style="width: 100%"
+              (click)="login()">Login
+      </button>
+      <!--<button mat-raised-button class="mx-auto" color="primary" style="width: 100%" [routerLink]="['/verification-qr']">
+        change password
+      </button>-->
+    </form>
+  </div>
+
+</div>
+<div>
+  <p style="text-align: center; font-weight: lighter">
+    Our mission is to help the operation of communities and increase the number of smily faces regardless of the entity. Strat-ups,  villages, NGOs or even countries are welcome. We focus on community based projects from planning and funding to evaluation of the results.
+  </p>
+  <p class="text-center" style="margin-top: 2em;">
+    You can visit our website at <a href="https://www.mosoly.live/">https://www.mosoly.live/</a>
+  </p>
+</div>

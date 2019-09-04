@@ -1,0 +1,22 @@
+<div class="container" style="min-height: 90vh">
+  <div class="row">
+    <div class="col-12">
+    <h4 class="title d-flex justify-content-center my-3">Mosoly</h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <hr />
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+</div>
+<footer class="page-footer font-small blue" *ngIf="loggedIn()">
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-right py-3" style="padding-right: 1em;">
+    <button mat-button (click)="logout()">Logout</button>
+  </div>
+  <!-- Copyright -->
+
+</footer>

@@ -1,0 +1,84 @@
+<div class="container py-2">
+  <mat-form-field class="full-width">
+
+    <input
+      matInput
+      type="text"
+      placeholder="Name"
+      autocomplete="off"
+      [(ngModel)]="needsValidation.customNameForMentor"
+      [ngModelOptions]="{standalone: true}"
+      disabled
+    >
+
+  </mat-form-field>
+  <mat-form-field class="full-width">
+
+    <input
+      matInput
+      type="text"
+      placeholder="Photo ID Type"
+      autocomplete="off"
+      [(ngModel)]="needsValidation.photoIdType"
+      [ngModelOptions]="{standalone: true}"
+      disabled
+    >
+
+  </mat-form-field>
+  <mat-form-field class="full-width">
+
+    <input
+      matInput
+      type="text"
+      placeholder="Photo ID Number"
+      autocomplete="off"
+      [(ngModel)]="needsValidation.photoIdNumber"
+      [ngModelOptions]="{standalone: true}"
+      disabled
+    >
+
+  </mat-form-field>
+  <mat-form-field class="full-width">
+
+    <input
+      matInput
+      type="text"
+      placeholder="Blockchain ID"
+      autocomplete="off"
+      [(ngModel)]="needsValidation.account"
+      [ngModelOptions]="{standalone: true}"
+      disabled
+    >
+
+  </mat-form-field>
+  <mat-form-field class="full-width">
+
+    <input
+      matInput
+      type="text"
+      placeholder="Anonymous email"
+      autocomplete="off"
+      [(ngModel)]="needsValidation.email"
+      [ngModelOptions]="{standalone: true}"
+      disabled
+    >
+
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+
+    <input
+      matInput
+      type="text"
+      placeholder="Custom name"
+      autocomplete="off"
+      [(ngModel)]="name"
+      [ngModelOptions]="{standalone: true}"
+      required
+    >
+
+  </mat-form-field>
+
+</div>
+<p *ngIf="needsValidation" style="font-weight: lighter; font-size: small; color: red; text-align: center">Your new invitee is ready to be verified. As for the sake of anonimity, please give him/her a custom name of your choice.</p>
+<p><button mat-raised-button color="warn" class="d-flex justify-content-center my-4" (click)="validate()">Verify</button></p>
